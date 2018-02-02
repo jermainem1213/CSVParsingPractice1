@@ -1,22 +1,53 @@
-# Compiled class file
-*.class
+import org.apache.commons.csv.*;
+import edu.duke.*;
+/**
+ * Write a description of CSVParserPractice here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Parser {
+    public void tester() {
+        FileResource fr = new FileResource
+        CSVParser parser = fr.getCSVParser();
+        
+        String countryInformation = countryInfo(parser, "Germany");
+        System.out.println(countryInformation);
+    }
+   
+public String countryInfo(CSVParser parser, String country){
+    for(CSVRecord record     : parser) {
+       String countries = record.get("Country");
+       
+       if (countries.contains(country)) {
+            String exports = record.get("Exports");
+            
+            String value = record.get("Value dollars)");
+            String countryInformation = country + ":" + exports + ":" + value;
+            
+            return countryInformation;
+        
+    }
+    //get exports according country
+    //get value of exports
+    
+    
+    
+}
+//country + exports + value
+String notFound = "NOT FOUND";
+return notFound;
+}
+public void listExportersTwoProducts (CSVParser parser, StringexportItem1 , StringexportItem2){
+    for (CSVRecord record : parser) {
+        String country = record.get("Country");
+        String exports = record.get("Exports");
+        
+        if(exports.contains(exportItem1) &&
+        exports.contains(exportItem2)) {
+            System.out.println("The country" + country + "exports the two items that you entered"))
+        }
+    }
 
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+}
+}
